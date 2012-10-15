@@ -1,0 +1,237 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :corpration_id %><br />
+    <%= f.number_field :corpration_id %>
+  </div>
+  <div class="field">
+    <%= f.label :place_id %><br />
+    <%= f.number_field :place_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_type %><br />
+    <%= f.number_field :client_type %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :domain %><br />
+    <%= f.text_field :domain %>
+  </div>
+  <div class="field">
+    <%= f.label :kakin_type %><br />
+    <%= f.number_field :kakin_type %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_type %><br />
+    <%= f.number_field :plan_type %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_inq %><br />
+    <%= f.number_field :avail_inq %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_rsv %><br />
+    <%= f.number_field :avail_rsv %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_cata %><br />
+    <%= f.number_field :avail_cata %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_ppc %><br />
+    <%= f.number_field :avail_ppc %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_url %><br />
+    <%= f.number_field :avail_url %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_fair %><br />
+    <%= f.number_field :avail_fair %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_kotei %><br />
+    <%= f.number_field :tanka_kotei %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_inq %><br />
+    <%= f.number_field :tanka_inq %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_rsv %><br />
+    <%= f.number_field :tanka_rsv %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_fair %><br />
+    <%= f.number_field :tanka_fair %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_cata %><br />
+    <%= f.number_field :tanka_cata %>
+  </div>
+  <div class="field">
+    <%= f.label :tanka_ppc %><br />
+    <%= f.number_field :tanka_ppc %>
+  </div>
+  <div class="field">
+    <%= f.label :mmg1_flg %><br />
+    <%= f.number_field :mmg1_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :mmg2_flg %><br />
+    <%= f.number_field :mmg2_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :mmg3_flg %><br />
+    <%= f.number_field :mmg3_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :mmg4_flg %><br />
+    <%= f.number_field :mmg4_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :mmg5_flg %><br />
+    <%= f.number_field :mmg5_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op1 %><br />
+    <%= f.number_field :plan_basic_op1 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op2 %><br />
+    <%= f.number_field :plan_basic_op2 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op3 %><br />
+    <%= f.number_field :plan_basic_op3 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op4 %><br />
+    <%= f.number_field :plan_basic_op4 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op5 %><br />
+    <%= f.number_field :plan_basic_op5 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op6 %><br />
+    <%= f.number_field :plan_basic_op6 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op7 %><br />
+    <%= f.number_field :plan_basic_op7 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op8 %><br />
+    <%= f.number_field :plan_basic_op8 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op9 %><br />
+    <%= f.number_field :plan_basic_op9 %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_basic_op10 %><br />
+    <%= f.number_field :plan_basic_op10 %>
+  </div>
+  <div class="field">
+    <%= f.label :entry_date %><br />
+    <%= f.number_field :entry_date %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.number_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.number_field :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :con_month %><br />
+    <%= f.number_field :con_month %>
+  </div>
+  <div class="field">
+    <%= f.label :ppc_sponsor_id %><br />
+    <%= f.number_field :ppc_sponsor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_memo %><br />
+    <%= f.text_area :sales_memo %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_date %><br />
+    <%= f.number_field :reg_date %>
+  </div>
+  <div class="field">
+    <%= f.label :mod_date %><br />
+    <%= f.number_field :mod_date %>
+  </div>
+  <div class="field">
+    <%= f.label :del_flg %><br />
+    <%= f.text_field :del_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :0 %><br />
+    <%= f.text_field :0 %>
+  </div>
+  <div class="field">
+    <%= f.label :new_plan_type %><br />
+    <%= f.number_field :new_plan_type %>
+  </div>
+  <div class="field">
+    <%= f.label :mieruka_st %><br />
+    <%= f.number_field :mieruka_st %>
+  </div>
+  <div class="field">
+    <%= f.label :own_site_st %><br />
+    <%= f.number_field :own_site_st %>
+  </div>
+  <div class="field">
+    <%= f.label :ohidori_pb_num %><br />
+    <%= f.number_field :ohidori_pb_num %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_pb_num %><br />
+    <%= f.number_field :photo_pb_num %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_pb_num %><br />
+    <%= f.number_field :plan_pb_num %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_reg_num %><br />
+    <%= f.number_field :plan_reg_num %>
+  </div>
+  <div class="field">
+    <%= f.label :charge_name %><br />
+    <%= f.text_field :charge_name %>
+  </div>
+  <div class="field">
+    <%= f.label :other_charge_name %><br />
+    <%= f.text_field :other_charge_name %>
+  </div>
+  <div class="field">
+    <%= f.label :plan_sales_memo %><br />
+    <%= f.text_area :plan_sales_memo %>
+  </div>
+  <div class="field">
+    <%= f.label :bill_id %><br />
+    <%= f.number_field :bill_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

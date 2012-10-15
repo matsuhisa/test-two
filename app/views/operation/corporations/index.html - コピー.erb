@@ -1,0 +1,54 @@
+<h1>Listing corporations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Department name</th>
+    <th>Corp l name</th>
+    <th>Corp f name</th>
+    <th>Admin type</th>
+    <th>Tel</th>
+    <th>Zip code</th>
+    <th>Pref</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Address3</th>
+    <th>Bank account</th>
+    <th>Bank account1</th>
+    <th>Bank account2</th>
+    <th>Sales memo</th>
+    <th>Reg date</th>
+    <th>Mod date</th>
+    <th>Del flg</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @corporations.each do |corporation| %>
+  <tr>
+    <td><%= corporation.name %></td>
+    <td><%= corporation.department_name %></td>
+    <td><%= corporation.corp_l_name %></td>
+    <td><%= corporation.corp_f_name %></td>
+    <td><%= corporation.admin_type %></td>
+    <td><%= corporation.tel %></td>
+    <td><%= corporation.zip_code %></td>
+    <td><%= corporation.pref_id %></td>
+    <td><%= corporation.address1 %></td>
+    <td><%= corporation.address2 %></td>
+    <td><%= corporation.address3 %></td>
+    <td><%= corporation.bank_account %></td>
+    <td><%= corporation.bank_account1 %></td>
+    <td><%= corporation.bank_account2 %></td>
+    <td><%= corporation.sales_memo %></td>
+    <td><%= corporation.reg_date %></td>
+    <td><%= corporation.mod_date %></td>
+    <td><%= corporation.del_flg %></td>
+    <td><%= link_to 'Show', operation_corporation_path(corporation) %></td>
+    <td><%= link_to 'Edit', edit_operation_corporation_path(corporation) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

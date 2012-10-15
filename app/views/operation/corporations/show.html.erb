@@ -1,0 +1,53 @@
+<h2>法人企業</h2>
+
+
+<p id="notice"><%= notice %></p>
+
+<h3>企業情報</h3>
+
+<dl>
+  <dt>企業名</dt>
+  <dd>
+    <%= @corporation.name %>
+  </dd>
+  <dt>企業種別</dt>
+  <dd>
+    <%= @corporation.admin_type_name %>
+  </dd>
+  <dt>請求先住所</dt>
+  <dd>
+    <%= @corporation.address %>
+  </dd>
+  <dt>請求先氏名</dt>
+  <dd>
+    <%= @corporation.corp_l_name %><%= @corporation.corp_f_name %>
+  </dd>
+</dl>
+
+<h3>法人店舗</h3>
+
+<table>
+  <tr>
+    <th>店舗種別</th>
+    <th>店舗名</th>
+    <th>PPC</th>
+    <th>登録日</th>
+  </tr>
+<% @corporation.clients.each do |client| %>
+  <tr>
+    <td><%= client.client_type_name %></td>
+    <td>
+      <%= link_to client.name, operation_client_path(client) %>（<%= client.corporation.name %>）
+    </td>
+    <td><%= client.ppc_sponsor_id %></td>
+    <td><%= client.reg_datetime %></td>
+  </tr>
+<% end %>
+</table>
+
+<h3>ユーザー一覧</h3>
+
+
+
+<%= link_to 'Edit', edit_operation_corporation_path(@corporation) %> |
+<%= link_to 'Back', operation_corporations_path %>

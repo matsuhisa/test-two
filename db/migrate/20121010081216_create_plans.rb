@@ -1,0 +1,87 @@
+class CreatePlans < ActiveRecord::Migration
+  def change
+    create_table :plans do |t|
+      t.string :name
+      t.integer :type
+      t.integer :public_status
+      t.integer :client_id
+      t.integer :place_id
+      t.text :cathc
+      t.text :description
+      t.text :remark
+      t.text :app_period
+      t.text :wedd_period
+      t.integer :public_from
+      t.integer :public_to
+      t.integer :order_number
+      t.integer :place_order_number
+      t.integer :attachment_plan_id
+      t.text :privilege_txt
+      t.integer :base_price
+      t.integer :min_count
+      t.integer :max_count
+      t.integer :recommend_count
+      t.integer :unit_price
+      t.text :count_etc_txt
+      t.integer :wedding_inc
+      t.string :wedding_txt
+      t.integer :apparel_inc
+      t.string :apparel_txt
+      t.integer :accessory_inc
+      t.string :accessory_txt
+      t.integer :bouquet_inc
+      t.string :bouquet_txt
+      t.integer :hair_inc
+      t.string :hair_txt
+      t.integer :waiting_inc
+      t.string :waiting_txt
+      t.integer :guest_inc
+      t.string :guest_txt
+      t.integer :helper_inc
+      t.string :helper_txt
+      t.integer :photo_inc
+      t.string :photo_txt
+      t.integer :church_inc
+      t.string :church_txt
+      t.integer :singer_inc
+      t.string :singer_txt
+      t.integer :certificate_inc
+      t.string :certificate_txt
+      t.integer :food_inc
+      t.string :food_txt
+      t.integer :cake_inc
+      t.string :cake_txt
+      t.integer :present_inc
+      t.string :present_txt
+      t.integer :place_inc
+      t.string :place_txt
+      t.integer :sound_inc
+      t.string :sound_txt
+      t.integer :flower_inc
+      t.string :flower_txt
+      t.integer :print_inc
+      t.string :print_txt
+      t.integer :moderator_inc
+      t.string :moderator_txt
+      t.integer :photo_dvd_inc
+      t.string :photo_dvd_txt
+      t.integer :album_inc
+      t.string :album_txt
+      t.integer :phpto_cut_inc
+      t.string :phpto_cut_txt
+      t.integer :phpto_place_inc
+      t.string :phpto_place_txt
+      t.integer :phpto_apparel_inc
+      t.string :phpto_apparel_txt
+      t.integer :privilege_two_inc
+      t.string :privilege_two_txt
+      t.integer :accommodation_inc
+      t.text :accommodation_txt
+      t.integer :reg_date
+      t.integer :mod_date
+      t.integer :del_flg
+
+      t.timestamps
+    end
+  end
+end

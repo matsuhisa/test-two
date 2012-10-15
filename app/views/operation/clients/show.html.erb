@@ -1,0 +1,54 @@
+<h2>店舗</h2>
+
+
+<p id="notice"><%= notice %></p>
+
+<h3>店舗情報</h3>
+
+<dl>
+  <dt>店舗種別</dt>
+  <dd>
+    <%= @client.client_type_name %>
+  </dd>
+  <dt>店舗名</dt>
+  <dd>
+  <%= @client.name %>（<%= @client.id %>）
+  </dd>
+  <dt>PPC広告主ID</dt>
+  <dd>
+    <%= @client.ppc_sponsor_id %> 
+  </dd>
+  <dt>見学予約</dt>
+  <dd>
+    <%= @client.avail_rsv_name %>
+  </dd>
+  <dt>問合せ</dt>
+  <dd>
+    <%= @client.avail_inq_name %>
+  </dd>
+  <dt>資料請求</dt>
+  <dd>
+    <%= @client.avail_cata_name %>
+  </dd>
+  <dt>フェア予約</dt>
+  <dd>
+    <%= @client.avail_fair_name %>
+  </dd>
+  <dt>営業メモ</dt>
+  <dd>
+    <%= @client.sales_memo %>
+  </dd>
+</dl>
+
+<% if @client.place %>
+<h3>式場情報</h3>
+
+<dl>
+  <dt>式場名</dt>
+  <dd>
+    <%= @client.place.name %>（編集）
+  </dd>
+</dl>
+<% end %>
+
+

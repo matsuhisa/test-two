@@ -1,0 +1,249 @@
+<%= form_for(@place, :url => operation_place_path(@place)) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :client_id %><br />
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :name_index %><br />
+    <%= f.text_field :name_index %>
+  </div>
+  <div class="field">
+    <%= f.label :reading_name %><br />
+    <%= f.text_field :reading_name %>
+  </div>
+  <div class="field">
+    <%= f.label :reading_name2 %><br />
+    <%= f.text_field :reading_name2 %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :pref_id %><br />
+    <%= f.number_field :pref_id %>
+  </div>
+  <div class="field">
+    <%= f.label :area_id %><br />
+    <%= f.number_field :area_id %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address3 %><br />
+    <%= f.text_field :address3 %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_area :url %>
+  </div>
+  <div class="field">
+    <%= f.label :place_type %><br />
+    <%= f.number_field :place_type %>
+  </div>
+  <div class="field">
+    <%= f.label :wedd_church %><br />
+    <%= f.number_field :wedd_church %>
+  </div>
+  <div class="field">
+    <%= f.label :wedd_shrine %><br />
+    <%= f.number_field :wedd_shrine %>
+  </div>
+  <div class="field">
+    <%= f.label :wedd_public %><br />
+    <%= f.number_field :wedd_public %>
+  </div>
+  <div class="field">
+    <%= f.label :wedd_temple %><br />
+    <%= f.number_field :wedd_temple %>
+  </div>
+  <div class="field">
+    <%= f.label :wedd_etc %><br />
+    <%= f.number_field :wedd_etc %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment_place_id %><br />
+    <%= f.number_field :attachment_place_id %>
+  </div>
+  <div class="field">
+    <%= f.label :point_total %><br />
+    <%= f.text_field :point_total %>
+  </div>
+  <div class="field">
+    <%= f.label :point1 %><br />
+    <%= f.text_field :point1 %>
+  </div>
+  <div class="field">
+    <%= f.label :point2 %><br />
+    <%= f.text_field :point2 %>
+  </div>
+  <div class="field">
+    <%= f.label :point3 %><br />
+    <%= f.text_field :point3 %>
+  </div>
+  <div class="field">
+    <%= f.label :point4 %><br />
+    <%= f.text_field :point4 %>
+  </div>
+  <div class="field">
+    <%= f.label :point5 %><br />
+    <%= f.text_field :point5 %>
+  </div>
+  <div class="field">
+    <%= f.label :point6 %><br />
+    <%= f.text_field :point6 %>
+  </div>
+  <div class="field">
+    <%= f.label :rev_cnt %><br />
+    <%= f.number_field :rev_cnt %>
+  </div>
+  <div class="field">
+    <%= f.label :pv_num %><br />
+    <%= f.number_field :pv_num %>
+  </div>
+  <div class="field">
+    <%= f.label :x %><br />
+    <%= f.text_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label :y %><br />
+    <%= f.text_field :y %>
+  </div>
+  <div class="field">
+    <%= f.label :del_flg %><br />
+    <%= f.number_field :del_flg %>
+  </div>
+  <div class="field">
+    <%= f.label :place_name_old %><br />
+    <%= f.text_field :place_name_old %>
+  </div>
+  <div class="field">
+    <%= f.label :reading_name_old %><br />
+    <%= f.text_field :reading_name_old %>
+  </div>
+  <div class="field">
+    <%= f.label :reading_name2_old %><br />
+    <%= f.text_field :reading_name2_old %>
+  </div>
+  <div class="field">
+    <%= f.label :neigh_station1 %><br />
+    <%= f.text_field :neigh_station1 %>
+  </div>
+  <div class="field">
+    <%= f.label :neigh_station2 %><br />
+    <%= f.text_field :neigh_station2 %>
+  </div>
+  <div class="field">
+    <%= f.label :neigh_station3 %><br />
+    <%= f.text_field :neigh_station3 %>
+  </div>
+  <div class="field">
+    <%= f.label :free_word %><br />
+    <%= f.text_area :free_word %>
+  </div>
+  <div class="field">
+    <%= f.label :att_point %><br />
+    <%= f.number_field :att_point %>
+  </div>
+  <div class="field">
+    <%= f.label :att_point_org %><br />
+    <%= f.number_field :att_point_org %>
+  </div>
+  <div class="field">
+    <%= f.label :att_point_plus %><br />
+    <%= f.number_field :att_point_plus %>
+  </div>
+  <div class="field">
+    <%= f.label :att_point_advert %><br />
+    <%= f.number_field :att_point_advert %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_pref_id %><br />
+    <%= f.number_field :sub_pref_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_address1 %><br />
+    <%= f.text_field :sub_address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_address2 %><br />
+    <%= f.text_field :sub_address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_address3 %><br />
+    <%= f.text_field :sub_address3 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_neigh_station1 %><br />
+    <%= f.text_field :sub_neigh_station1 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_neigh_station2 %><br />
+    <%= f.text_field :sub_neigh_station2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_neigh_station3 %><br />
+    <%= f.text_field :sub_neigh_station3 %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_x %><br />
+    <%= f.text_field :sub_x %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_y %><br />
+    <%= f.text_field :sub_y %>
+  </div>
+  <div class="field">
+    <%= f.label :sub_remark %><br />
+    <%= f.text_area :sub_remark %>
+  </div>
+  <div class="field">
+    <%= f.label :ppc_sponsor_id %><br />
+    <%= f.text_field :ppc_sponsor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_date %><br />
+    <%= f.number_field :reg_date %>
+  </div>
+  <div class="field">
+    <%= f.label :mod_date %><br />
+    <%= f.number_field :mod_date %>
+  </div>
+  <div class="field">
+    <%= f.label :staff_id %><br />
+    <%= f.number_field :staff_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

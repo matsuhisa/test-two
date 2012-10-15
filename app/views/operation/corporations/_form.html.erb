@@ -1,0 +1,89 @@
+<%= form_for(@corporation) do |f| %>
+  <% if @corporation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@corporation.errors.count, "error") %> prohibited this corporation from being saved:</h2>
+
+      <ul>
+      <% @corporation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :department_name %><br />
+    <%= f.text_field :department_name %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_l_name %><br />
+    <%= f.text_field :corp_l_name %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_f_name %><br />
+    <%= f.text_field :corp_f_name %>
+  </div>
+  <div class="field">
+    <%= f.label :admin_type %><br />
+    <%= f.number_field :admin_type %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :pref_id %><br />
+    <%= f.number_field :pref_id %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address3 %><br />
+    <%= f.text_field :address3 %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_account %><br />
+    <%= f.text_field :bank_account %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_account1 %><br />
+    <%= f.text_field :bank_account1 %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_account2 %><br />
+    <%= f.text_field :bank_account2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_memo %><br />
+    <%= f.text_area :sales_memo %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_date %><br />
+    <%= f.number_field :reg_date %>
+  </div>
+  <div class="field">
+    <%= f.label :mod_date %><br />
+    <%= f.number_field :mod_date %>
+  </div>
+  <div class="field">
+    <%= f.label :del_flg %><br />
+    <%= f.number_field :del_flg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h2>法人企業</h2>
+
+<table>
+  <tr>
+    <th>企業種別</th>
+    <th>都道府県</th>
+    <th>企業名</th>
+    <th>登録日時</th>
+  </tr>
+<% @corporations.each do |corporation| %>
+  <tr>
+    <td><%= corporation.admin_type_name %></td>
+    <td><%= corporation.pref_name %></td>
+    <td>
+      <%= link_to corporation.name, operation_corporation_path(corporation) %>（<%= link_to '編集', edit_operation_corporation_path(corporation) %>）
+    </td>
+    <td><%= corporation.reg_datetime %></td>
+  </tr>
+<% end %>
+</table>
+

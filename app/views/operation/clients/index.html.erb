@@ -1,0 +1,124 @@
+<h1>Listing clients</h1>
+
+<table>
+  <tr>
+    <th>Corpration</th>
+    <th>Place</th>
+    <th>Client type</th>
+    <th>Name</th>
+    <th>Domain</th>
+    <th>Kakin type</th>
+    <th>Plan type</th>
+    <th>Avail inq</th>
+    <th>Avail rsv</th>
+    <th>Avail cata</th>
+    <th>Avail ppc</th>
+    <th>Avail url</th>
+    <th>Avail fair</th>
+    <th>Tanka kotei</th>
+    <th>Tanka inq</th>
+    <th>Tanka rsv</th>
+    <th>Tanka fair</th>
+    <th>Tanka cata</th>
+    <th>Tanka ppc</th>
+    <th>Mmg1 flg</th>
+    <th>Mmg2 flg</th>
+    <th>Mmg3 flg</th>
+    <th>Mmg4 flg</th>
+    <th>Mmg5 flg</th>
+    <th>Plan basic op1</th>
+    <th>Plan basic op2</th>
+    <th>Plan basic op3</th>
+    <th>Plan basic op4</th>
+    <th>Plan basic op5</th>
+    <th>Plan basic op6</th>
+    <th>Plan basic op7</th>
+    <th>Plan basic op8</th>
+    <th>Plan basic op9</th>
+    <th>Plan basic op10</th>
+    <th>Entry date</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Con month</th>
+    <th>Ppc sponsor</th>
+    <th>Sales memo</th>
+    <th>Reg date</th>
+    <th>Mod date</th>
+    <th>Del flg</th>
+    <th>New plan type</th>
+    <th>Mieruka st</th>
+    <th>Own site st</th>
+    <th>Ohidori pb num</th>
+    <th>Photo pb num</th>
+    <th>Plan pb num</th>
+    <th>Plan reg num</th>
+    <th>Charge name</th>
+    <th>Other charge name</th>
+    <th>Plan sales memo</th>
+    <th>Bill</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.corporation_id %></td>
+    <td><%= client.place_id %></td>
+    <td><%= client.client_type %></td>
+    <td><%= client.name %></td>
+    <td><%= client.domain %></td>
+    <td><%= client.kakin_type %></td>
+    <td><%= client.plan_type %></td>
+    <td><%= client.avail_inq %></td>
+    <td><%= client.avail_rsv %></td>
+    <td><%= client.avail_cata %></td>
+    <td><%= client.avail_ppc %></td>
+    <td><%= client.avail_url %></td>
+    <td><%= client.avail_fair %></td>
+    <td><%= client.tanka_kotei %></td>
+    <td><%= client.tanka_inq %></td>
+    <td><%= client.tanka_rsv %></td>
+    <td><%= client.tanka_fair %></td>
+    <td><%= client.tanka_cata %></td>
+    <td><%= client.tanka_ppc %></td>
+    <td><%= client.mmg1_flg %></td>
+    <td><%= client.mmg2_flg %></td>
+    <td><%= client.mmg3_flg %></td>
+    <td><%= client.mmg4_flg %></td>
+    <td><%= client.mmg5_flg %></td>
+    <td><%= client.plan_basic_op1 %></td>
+    <td><%= client.plan_basic_op2 %></td>
+    <td><%= client.plan_basic_op3 %></td>
+    <td><%= client.plan_basic_op4 %></td>
+    <td><%= client.plan_basic_op5 %></td>
+    <td><%= client.plan_basic_op6 %></td>
+    <td><%= client.plan_basic_op7 %></td>
+    <td><%= client.plan_basic_op8 %></td>
+    <td><%= client.plan_basic_op9 %></td>
+    <td><%= client.plan_basic_op10 %></td>
+    <td><%= client.entry_date %></td>
+    <td><%= client.start_date %></td>
+    <td><%= client.end_date %></td>
+    <td><%= client.con_month %></td>
+    <td><%= client.ppc_sponsor_id %></td>
+    <td><%= client.sales_memo %></td>
+    <td><%= client.reg_date %></td>
+    <td><%= client.mod_date %></td>
+    <td><%= client.del_flg %></td>
+    <td><%= client.new_plan_type %></td>
+    <td><%= client.mieruka_st %></td>
+    <td><%= client.own_site_st %></td>
+    <td><%= client.ohidori_pb_num %></td>
+    <td><%= client.photo_pb_num %></td>
+    <td><%= client.plan_pb_num %></td>
+    <td><%= client.plan_reg_num %></td>
+    <td><%= client.charge_name %></td>
+    <td><%= client.other_charge_name %></td>
+    <td><%= client.plan_sales_memo %></td>
+    <td><%= client.bill_id %></td>
+    <td><%= link_to 'Show', operation_client_path(client) %></td>
+  </tr>
+<% end %>
+</table>
+

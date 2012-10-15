@@ -1,4 +1,14 @@
 Twed::Application.routes.draw do
+
+  # R¸ioperationj‰æ–Ê
+  namespace :operation do 
+    match '/' => 'home#index', :as => 'root'
+
+    resources :corporations
+    resources :clients
+    resources :places
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
