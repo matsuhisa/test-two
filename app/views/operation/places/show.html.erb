@@ -1,12 +1,79 @@
+<h1><%= @place.full_name %></h1>
+
 <p id="notice"><%= notice %></p>
 
 <h2>images</h2>
 <% @place.images.each do |image| %>
-        <li><%= image.attachment_file.file_name %></li>
+  <li><%= image.attachment_file.file_name %></li>
 <% end %>
 
-<h2>ad</h2>
-<%= @place.place_ad.description %>
+<h2>評点</h2>
+
+<p>総合：<%= @place.point_total %></p>
+<p>件数：<%= @place.rev_cnt %></p>
+
+<dl>
+  <dt>料理</dt>
+  <dd><%= @place.point1 %></dd>
+  <dt>スタッフ</dt>
+  <dd><%= @place.point2 %></dd>
+  <dt>進行演出</dt>
+  <dd><%= @place.point3 %></dd>
+  <dt>式場設備</dt>
+  <dd><%= @place.point4 %></dd>
+  <dt>場所</dt>
+  <dd><%= @place.point5 %></dd>
+  <dt>費用</dt>
+  <dd><%= @place.point6 %></dd>
+</dl>
+
+<h2>基本情報</h2>
+<dl>
+  <dt>式場タイプ</dt>
+  <dd>
+    <%= @place.place_type_name %> 
+  </dd>
+  <dt>挙式スタイル</dt>
+    <%= @place.style_type_name.join(',') %> 
+  <dd>
+  
+  </dd>
+  <dt>ブロック</dt>
+  <dd>
+    <%= @place.block.name %>
+  </dd>
+  <dt>エリア</dt>
+  <dd>
+    <%= @place.area.name %>
+  </dd>
+  <dt>式場住所</dt>
+  <dd>
+    <%= @place.address %>
+    <p>最寄駅：<%= @place.station.join(',') %></p>
+  </dd>
+  <dt>受付住所</dt>
+  <dd>
+    <%= @place.sub_address %>
+    <p>最寄駅：<%= @place.sub_station.join(',') %></p>
+  </dd>
+  <dt>受付時間</dt>
+  <dd>
+    <%= @place.open_info %>
+  </dd>
+  <dt>定休日</dt>
+  <dd>
+    <%= @place.holiday_info %>
+  </dd>
+</dl>
+
+<h2>告知</h2>
+
+<h3><%= @place.catch %></h3>
+
+<p>
+<%=raw nl2br @place.place_ad.description %>
+</p>
+
 
 <h2>Spec</h2>
 <ul>
@@ -14,284 +81,8 @@
   <li><%= spec.place_spec_master.name %>/<%= spec.body %></li>
 <% end %>
 </ul>
-        
 
-<h2>Detail</h2>
-<p>
-  <b>Client:</b>
-  <%= @place.client_id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @place.name %>
-</p>
-
-<p>
-  <b>Name index:</b>
-  <%= @place.name_index %>
-</p>
-
-<p>
-  <b>Reading name:</b>
-  <%= @place.reading_name %>
-</p>
-
-<p>
-  <b>Reading name2:</b>
-  <%= @place.reading_name2 %>
-</p>
-
-<p>
-  <b>Zip code:</b>
-  <%= @place.zip_code %>
-</p>
-
-<p>
-  <b>Tel:</b>
-  <%= @place.tel %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @place.fax %>
-</p>
-
-<p>
-  <b>Pref:</b>
-  <%= @place.pref_id %>
-</p>
-
-<p>
-  <b>Area:</b>
-  <%= @place.area_id %>
-</p>
-
-<p>
-  <b>Address1:</b>
-  <%= @place.address1 %>
-</p>
-
-<p>
-  <b>Address2:</b>
-  <%= @place.address2 %>
-</p>
-
-<p>
-  <b>Address3:</b>
-  <%= @place.address3 %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @place.url %>
-</p>
-
-<p>
-  <b>Place type:</b>
-  <%= @place.place_type %>
-</p>
-
-<p>
-  <b>Wedd church:</b>
-  <%= @place.wedd_church %>
-</p>
-
-<p>
-  <b>Wedd shrine:</b>
-  <%= @place.wedd_shrine %>
-</p>
-
-<p>
-  <b>Wedd public:</b>
-  <%= @place.wedd_public %>
-</p>
-
-<p>
-  <b>Wedd temple:</b>
-  <%= @place.wedd_temple %>
-</p>
-
-<p>
-  <b>Wedd etc:</b>
-  <%= @place.wedd_etc %>
-</p>
-
-<p>
-  <b>Attachment place:</b>
-  <%= @place.attachment_place_id %>
-</p>
-
-<p>
-  <b>Point total:</b>
-  <%= @place.point_total %>
-</p>
-
-<p>
-  <b>Point1:</b>
-  <%= @place.point1 %>
-</p>
-
-<p>
-  <b>Point2:</b>
-  <%= @place.point2 %>
-</p>
-
-<p>
-  <b>Point3:</b>
-  <%= @place.point3 %>
-</p>
-
-<p>
-  <b>Point4:</b>
-  <%= @place.point4 %>
-</p>
-
-<p>
-  <b>Point5:</b>
-  <%= @place.point5 %>
-</p>
-
-<p>
-  <b>Point6:</b>
-  <%= @place.point6 %>
-</p>
-
-<p>
-  <b>Rev cnt:</b>
-  <%= @place.rev_cnt %>
-</p>
-
-<p>
-  <b>Pv num:</b>
-  <%= @place.pv_num %>
-</p>
-
-<p>
-  <b>X:</b>
-  <%= @place.x %>
-</p>
-
-<p>
-  <b>Y:</b>
-  <%= @place.y %>
-</p>
-
-<p>
-  <b>Del flg:</b>
-  <%= @place.del_flg %>
-</p>
-
-<p>
-  <b>Place name old:</b>
-  <%= @place.place_name_old %>
-</p>
-
-<p>
-  <b>Reading name old:</b>
-  <%= @place.reading_name_old %>
-</p>
-
-<p>
-  <b>Reading name2 old:</b>
-  <%= @place.reading_name2_old %>
-</p>
-
-<p>
-  <b>Neigh station1:</b>
-  <%= @place.neigh_station1 %>
-</p>
-
-<p>
-  <b>Neigh station2:</b>
-  <%= @place.neigh_station2 %>
-</p>
-
-<p>
-  <b>Neigh station3:</b>
-  <%= @place.neigh_station3 %>
-</p>
-
-<p>
-  <b>Free word:</b>
-  <%= @place.free_word %>
-</p>
-
-<p>
-  <b>Att point:</b>
-  <%= @place.att_point %>
-</p>
-
-<p>
-  <b>Att point org:</b>
-  <%= @place.att_point_org %>
-</p>
-
-<p>
-  <b>Att point plus:</b>
-  <%= @place.att_point_plus %>
-</p>
-
-<p>
-  <b>Att point advert:</b>
-  <%= @place.att_point_advert %>
-</p>
-
-<p>
-  <b>Sub pref:</b>
-  <%= @place.sub_pref_id %>
-</p>
-
-<p>
-  <b>Sub address1:</b>
-  <%= @place.sub_address1 %>
-</p>
-
-<p>
-  <b>Sub address2:</b>
-  <%= @place.sub_address2 %>
-</p>
-
-<p>
-  <b>Sub address3:</b>
-  <%= @place.sub_address3 %>
-</p>
-
-<p>
-  <b>Sub neigh station1:</b>
-  <%= @place.sub_neigh_station1 %>
-</p>
-
-<p>
-  <b>Sub neigh station2:</b>
-  <%= @place.sub_neigh_station2 %>
-</p>
-
-<p>
-  <b>Sub neigh station3:</b>
-  <%= @place.sub_neigh_station3 %>
-</p>
-
-<p>
-  <b>Sub x:</b>
-  <%= @place.sub_x %>
-</p>
-
-<p>
-  <b>Sub y:</b>
-  <%= @place.sub_y %>
-</p>
-
-<p>
-  <b>Sub remark:</b>
-  <%= @place.sub_remark %>
-</p>
-
-<p>
-  <b>Ppc sponsor:</b>
-  <%= @place.ppc_sponsor_id %>
-</p>
-
+<h2>登録状況</h2>
 <p>
   <b>Reg date:</b>
   <%= @place.reg_date %>

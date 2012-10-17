@@ -6,6 +6,13 @@ class Corporation < ActiveRecord::Base
 
   has_many :clients, :conditions => ('del_flg = 0')
 
+  def search(params={})
+    return self.scoped if params.nil?
+    params.reject{|k,v|v.blank?}.to_a.inject(self.scoped) do |base,param|
+      base.send(param.first, param.last)
+    end
+  end
+  
   def admin_type_name
       if self.admin_type == 1
         return "直営"

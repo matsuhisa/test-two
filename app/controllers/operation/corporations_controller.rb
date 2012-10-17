@@ -2,7 +2,9 @@ class Operation::CorporationsController < ApplicationController
   # GET /corporations
   # GET /corporations.json
   def index
-    @corporations = Corporation.newer.all
+    #@corporations = Corporation.newer.where(:admin_type=>params[:admin_type]).where(:pref_id=>params[:pref_id])
+    @corporations = Corporation.search(params)
+    #@corporations = Corporation.newer.all
 
     respond_to do |format|
       format.html # index.html.erb
