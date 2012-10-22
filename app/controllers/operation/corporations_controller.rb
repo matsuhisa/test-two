@@ -1,10 +1,15 @@
-class Operation::CorporationsController < ApplicationController
+# encoding: utf-8
+class Operation::CorporationsController < OperationController
   # GET /corporations
   # GET /corporations.json
   def index
-    #@corporations = Corporation.newer.where(:admin_type=>params[:admin_type]).where(:pref_id=>params[:pref_id])
-    @corporations = Corporation.search(params)
+    @corporation_search = Corporation_search.new params[:corporation_search]
+
+    @corporations = Corporation.newer.scoped
+	  @corporations = @corporations.like_name(@corporation_search.name).search_admin_type(@corporation_search.admin_type).search_pref_id(@corporation_search.pref_id)
+    
     #@corporations = Corporation.newer.all
+    #@corporations = Corporation.newer.where(:admin_type=>params[:admin_type]).where(:pref_id=>params[:pref_id])
 
     respond_to do |format|
       format.html # index.html.erb

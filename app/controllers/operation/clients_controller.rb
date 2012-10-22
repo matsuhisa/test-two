@@ -1,4 +1,4 @@
-class Operation::ClientsController < ApplicationController
+class Operation::ClientsController < OperationController
   # GET /clients
   # GET /clients.json
   def index

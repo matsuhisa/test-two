@@ -1,0 +1,23 @@
+development:
+  title: 'ふたりのウェディング'
+  delte: 
+    0: 未削除
+    1: 削除済
+
+  corporation_admin_type_names:
+    1: '直営'
+    2: 'デスク運営'
+    3: '代理店'
+
+  place_type_names:
+    1: '総合結婚式場'
+    2: 'ホテル'
+    3: 'レストラン'
+    4: 'ハウス'
+    5: '教会'
+    6: '神社仏閣'
+    99: 'その他'
+
+test:
+
+production:

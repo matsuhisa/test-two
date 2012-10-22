@@ -1,5 +1,7 @@
 Twed::Application.routes.draw do
 
+  devise_for :users
+
   # R¸ioperationj‰æ–Ê
   namespace :operation do 
     match '/' => 'home#index', :as => 'root'

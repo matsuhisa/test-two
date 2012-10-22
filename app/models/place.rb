@@ -4,6 +4,26 @@ class Place < ActiveRecord::Base
 
   scope :live, where('del_flg = 0')
 
+  scope :public, joins(:place_ad).merge(PlaceAd.live)
+
+	scope :like_name, lambda {|q| 
+    where('name like :q', :q => "%#{q}%")
+  }
+
+  scope :search_place_id, lambda {|q|
+    if q.present?
+      where(:id=>q) 
+    end
+  }
+
+  scope :search_pref_id, lambda {|q|
+    if q.present?
+      where(:pref_id=>q) 
+    end
+  }
+
+  # ---------- 
+
   has_one  :place_ad
   belongs_to  :pref
   belongs_to  :area

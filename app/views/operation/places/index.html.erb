@@ -1,4 +1,18 @@
-<h1>Listing places</h1>
+<h1>式場</h1>
+
+<%= form_for @place_operation_search, :url => operation_places_path, :html => {:method => :get} do |f| %>
+  <p>
+  式場名 
+  <%= f.search_field :name %></p>
+  <p>
+  <p>
+  式場ID
+  <%= f.search_field :id %></p>
+  <p>
+  <%= f.collection_select(:pref_id, Pref.all, :id, :name, :include_blank => '都道府県を選択') %>
+  </p>
+	<%= f.submit '検索' %>
+<% end %>
 
 <%= paginate @places %>
 

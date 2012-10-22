@@ -4,15 +4,24 @@ class Corporation < ActiveRecord::Base
 
   scope :newer, order('reg_date DESC')
 
-  has_many :clients, :conditions => ('del_flg = 0')
+	scope :like_name, lambda {|q| 
+    where('name like :q', :q => "%#{q}%")
+  }
 
-  def search(params={})
-    return self.scoped if params.nil?
-    params.reject{|k,v|v.blank?}.to_a.inject(self.scoped) do |base,param|
-      base.send(param.first, param.last)
+  scope :search_admin_type, lambda {|q|
+    if q.present?
+      where(:admin_type=>q) 
     end
-  end
-  
+  }
+
+  scope :search_pref_id, lambda {|q|
+    if q.present?
+      where(:pref_id=>q) 
+    end
+  }
+
+  has_many :clients, :conditions => ('del_flg = 0')
+ 
   def admin_type_name
       if self.admin_type == 1
         return "直営"

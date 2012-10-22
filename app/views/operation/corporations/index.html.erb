@@ -1,5 +1,18 @@
 <h2>法人企業</h2>
 
+<%= form_for @corporation_search, :url => operation_corporations_path, :html => {:method => :get} do |f| %>
+  <p>
+  企業名
+  <%= f.search_field :name %></p>
+  <p>
+  <%= select(:corporation_search, :admin_type, @corporation_search.admin_type_names.map{|t| [t[1], t[0]]}, :include_blank => '企業種別を選択') %>
+  </p>
+  <p>
+  <%= f.collection_select(:pref_id, Pref.all, :id, :name, :include_blank => '都道府県を選択') %>
+  </p>
+	<%= f.submit '検索' %>
+<% end %>
+
 <table>
   <tr>
     <th>企業種別</th>

@@ -1,8 +1,19 @@
-class Operation::PlacesController < ApplicationController
+class Operation::PlacesController < OperationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.live.page(params[:page]).per(50)
+    @place_operation_search = Place_operation_search.new params[:place_operation_search]
+
+    #@places = Place.joins(:place_ad).merge(PlaceAd.public).page(params[:page]).per(20)
+    #@places = Place.page(params[:page]).per(20)
+    @places = Place
+      .like_name(@place_operation_search.name)
+      .search_place_id(@place_operation_search.id)
+      .search_pref_id(@place_operation_search.pref_id)
+      if params[:public] == '1'
+        @places = @places.public
+      end
+      @places = @places.page(params[:page]).per(20).scoped
 
     respond_to do |format|
       format.html # index.html.erb
