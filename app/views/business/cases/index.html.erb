@@ -1,0 +1,22 @@
+<h1><%= @place.full_name %>（<%= @place.id %>）</h1>
+
+<%= render '/business/common/sub_menu' %>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>開催日時</th>
+  </tr>
+<% @cases.each do |c| %>
+  <tr>
+    <td>
+<%= c.name %><br>
+
+<%= c.etc %><br>
+
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+</table>

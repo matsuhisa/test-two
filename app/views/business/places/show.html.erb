@@ -1,0 +1,103 @@
+<h1><%= @place.full_name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<h2>images</h2>
+<% @place.images.each do |image| %>
+  <li><%= image.attachment_file.file_name %></li>
+<% end %>
+
+<h2>評点</h2>
+
+<p>総合：<%= @place.point_total %></p>
+<p>件数：<%= @place.rev_cnt %></p>
+
+<dl>
+  <dt>料理</dt>
+  <dd><%= @place.point1 %></dd>
+  <dt>スタッフ</dt>
+  <dd><%= @place.point2 %></dd>
+  <dt>進行演出</dt>
+  <dd><%= @place.point3 %></dd>
+  <dt>式場設備</dt>
+  <dd><%= @place.point4 %></dd>
+  <dt>場所</dt>
+  <dd><%= @place.point5 %></dd>
+  <dt>費用</dt>
+  <dd><%= @place.point6 %></dd>
+</dl>
+
+<h2>基本情報</h2>
+<dl>
+  <dt>式場タイプ</dt>
+  <dd>
+    <%= @place.place_type_name %> 
+  </dd>
+  <dt>挙式スタイル</dt>
+    <%= @place.style_type_name.join(',') %> 
+  <dd>
+  
+  </dd>
+  <dt>ブロック</dt>
+  <dd>
+    <%= @place.block.name %>
+  </dd>
+  <dt>エリア</dt>
+  <dd>
+    <%= @place.area.name %>
+  </dd>
+  <dt>式場住所</dt>
+  <dd>
+    <%= @place.address %>
+    <p>最寄駅：<%= @place.station.join(',') %></p>
+  </dd>
+  <dt>受付住所</dt>
+  <dd>
+    <%= @place.sub_address %>
+    <p>最寄駅：<%= @place.sub_station.join(',') %></p>
+  </dd>
+  <dt>受付時間</dt>
+  <dd>
+    <%= @place.open_info %>
+  </dd>
+  <dt>定休日</dt>
+  <dd>
+    <%= @place.holiday_info %>
+  </dd>
+</dl>
+
+<h2>告知</h2>
+
+<h3><%= @place.catch %></h3>
+
+<p>
+<%=raw nl2br @place.place_ad.description %>
+</p>
+
+
+<h2>Spec</h2>
+<ul>
+<% @place.place_specs.each do |spec| %>
+  <li><%= spec.place_spec_master.name %>/<%= spec.body %></li>
+<% end %>
+</ul>
+
+<h2>登録状況</h2>
+<p>
+  <b>Reg date:</b>
+  <%= @place.reg_date %>
+</p>
+
+<p>
+  <b>Mod date:</b>
+  <%= @place.mod_date %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%= @place.staff_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_operation_place_path(@place) %> |
+<%= link_to 'Back', operation_places_path %>

@@ -5,10 +5,18 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'therubyracer'
+
 gem 'sqlite3'
 gem 'mysql2'
-gem 'therubyracer'
+
+# İ’è
+gem 'settingslogic'
+
+# Pager
 gem 'kaminari'
+
+# ”FØ
 gem 'devise'
 
 # Gems used only for assets and not required

@@ -1,0 +1,20 @@
+<h1><%= @place.full_name %>（<%= @place.id %>）</h1>
+
+<%= render '/business/common/sub_menu' %>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>開催日時</th>
+  </tr>
+<% @fairs.each do |fair| %>
+  <tr>
+    <td>
+<%= fair.name %><br>
+編集
+    </td>
+    <td>
+    </td>
+  </tr>
+<% end %>
+</table>

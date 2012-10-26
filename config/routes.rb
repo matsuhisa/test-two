@@ -1,6 +1,21 @@
 Twed::Application.routes.draw do
 
+  get "top/index"
+
+  #get "top/index"
+  root :to => "top#index"
+
   devise_for :users
+
+  # 式場管理（business）画面
+  namespace :business do 
+    match '/' => 'top#index', :as => 'root'
+
+    resources :places
+    resources :fairs
+    resources :cases
+    resources :plans
+  end
 
   # 審査（operation）画面
   namespace :operation do 

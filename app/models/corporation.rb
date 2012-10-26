@@ -21,10 +21,19 @@ class Corporation < ActiveRecord::Base
   }
 
   has_many :clients, :conditions => ('del_flg = 0')
- 
+
+  has_many :users
+
   def admin_type_name
+    #Constants.login_type_names
+    admin_type_names = Constants.corporation_admin_type_names
+    return admin_type_names[self.admin_type]
+=begin
       if self.admin_type == 1
-        return "直営"
+        #puts Constants.corporation_admin_type_names
+        #return Constants.corporation_admin_type_names
+        admin_type_names = Constants.corporation_admin_type_names
+        return admin_type_names[self.admin_type]
       elsif self.admin_type == 2 then
         return "デスク運営"
       elsif self.admin_type == 3 then
@@ -32,6 +41,7 @@ class Corporation < ActiveRecord::Base
       else
         return '-'
       end
+=end
   end
 
   def pref_name

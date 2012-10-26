@@ -6,6 +6,23 @@
   <div><%= f.label :login_name %><br />
   <%= f.text_field :login_name %></div>
 
+  <div><%= f.label :corporation_id %><br />
+  <%= f.collection_select(:corporation_id, resource.corporations, :id, :name) %></div>
+
+  <div><%= f.label :client_id %><br />
+  <%= f.collection_select(:client_id, resource.target_clients, :id, :name, :include_blank=>'未選択') %></div>
+
+  <div><%= f.label :login_type %><br />
+  <%= f.select('login_type', resource.login_type_names.invert) %></div>
+
+  <div><%= f.label :user_type %><br />
+  <%= f.select('user_type', resource.user_type_names.invert) %></div>
+
+  <div><%= f.label :status %><br />
+  <%= f.select('status', resource.user_status_names.invert) %></div>
+
+  <hr /> 
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 

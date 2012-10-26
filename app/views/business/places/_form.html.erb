@@ -1,0 +1,119 @@
+<%= form_for(@place, :url => business_place_path(@place)) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<ul>
+<% @place.place_specs.each do |spec| %>
+  <li><%= spec.place_spec_master.name %>/<%= spec.body %></li>
+<% end %>
+</ul>
+
+  <% PlaceSpecMaster.business_edit.each_with_index do |spec_master, i| %>
+    <div class="field">
+      <%= spec_master.id %>.<%= spec_master.name %><br />
+      <%
+        spec      = @place.place_specs.find_by_place_spec_master_id(spec_master.id)
+        name_body = 'place[place_specs_attributes][' + spec.id.to_s + '][body]'
+        name_id   = 'place[place_specs_attributes][' + spec.id.to_s + '][id]'
+      %>
+      <%= text_field_tag name_body, spec.body %>
+      <%= hidden_field_tag name_id, spec.id %>
+    </div>
+  <% end %>
+
+<% if false %>
+  <% PlaceSpecMaster.business_edit.each do |spec_master| %>
+    <div class="field">
+      <%= spec_master.id %>.<%= spec_master.name %><br />
+      <%= fields_for @place.place_specs.find_by_place_spec_master_id(spec_master.id) do |spec| %>
+      <%
+        name_body = 'place[place_specs_attributes][' + spec_master.id.to_s + '][body]'
+        name_id   = 'place[place_specs_attributes][' + spec_master.id.to_s + '][id]'
+      %>
+      <%= text_field_tag name_body, 'foo' %>
+      <%= hidden_field_tag name_id %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if false %>
+  <%= f.fields_for :place_specs do |spec| %>
+    <%= spec.text_field :body %>
+  <% end %>
+<% end %>
+
+<% if false %>
+  <% PlaceSpecMaster.business_edit.each do |spec_master| %>
+    <div class="field">
+      <%= spec_master.id %>.<%= spec_master.name %><br />
+      <%= fields_for @place.place_specs.find_by_place_spec_master_id(spec_master.id) do |spec| %>
+        <%= spec.text_field :body %>
+      <% end %>
+      <%#= @place.place_specs %>
+      <%#= @place.place_specs.find_by_place_spec_master_id(spec_master.id).body %>
+      <%#= text_field_tag 'place[name]' %>
+    </div>
+  <% end %>
+<% end %>
+
+  <hr /> 
+
+
+  <%= fields_for @place.place_ad do |ad| %>
+        
+    <div class="field">
+      式場キャッチコピー<br />
+      <%= ad.text_field :catch %>
+    </div>
+
+    <div class="field">
+      式場説明<br />
+      <%= ad.text_area :description %>
+    </div>
+
+    <div class="field">
+      式場への行き方<br />
+      <%= ad.text_area :course %>
+    </div>
+
+    <div class="field">
+      受付時間<br />
+      <%= ad.text_field :open_info %>
+    </div>
+
+    <div class="field">
+      定休日<br />
+      <%= ad.text_field :holiday_info %>
+    </div>
+
+    <div class="field">
+      受付カウンターへの行き方<br />
+      <%= ad.text_field :sub_course %>
+    </div>
+
+    <div class="field">
+      受付カウンターの受付時間<br />
+      <%= ad.text_field :sub_open_info %>
+    </div>
+
+    <div class="field">
+      受付カウンターの定休日<br />
+      <%= ad.text_field :sub_holiday_info %>
+    </div>
+
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

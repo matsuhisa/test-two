@@ -46,8 +46,28 @@
 </table>
 
 <h3>ユーザー一覧</h3>
+<p>企業に紐付くユーザーを表示</p>
 
-
+<table>
+  <tr>
+    <th>ユーザーID</th>
+    <th>名前</th>
+    <th>タイプ</th>
+  </tr>
+<% @corporation.users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.id %>      
+    </td>
+    <td>
+      <%= user.login_name %>      
+    </td>
+    <td>
+      <%= user.user_type_name %>      
+    </td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_operation_corporation_path(@corporation) %> |
 <%= link_to 'Back', operation_corporations_path %>

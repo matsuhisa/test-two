@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>格安で少人数結婚式を挙げるなら「ふたりのウェディング」</title>
+<% if user_signed_in? %>
+  <title><%= current_user.place.full_name %>様管理画面</title>
+<% else %>
+  <title>ふたりのウェディング式場様管理画面</title>
+<% end %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 
 <div>
 <% if user_signed_in? %>
@@ -19,7 +24,20 @@
 <% end %>
 </div>        
 
+<h1><%= link_to 'ふたりのウェディング式場様管理画面', business_root_path %></h1>
+
+<ul>
+  <li><%= link_to "掲載情報の編集", business_places_path %></li>
+  <li>ユーザー対応</li>
+  <li>統計情報</li>
+  <li>各種設定</li>
+</ul>
+
+
 <%= yield %>
+
+<%= controller.controller_name %>
+<%= controller.action_name %>
 
 </body>
 </html>

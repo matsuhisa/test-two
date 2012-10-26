@@ -1,13 +1,34 @@
-development:
+defaults: &defaults
+
   title: 'ふたりのウェディング'
-  delte: 
-    0: 未削除
-    1: 削除済
+
+  basePath: 'http://stage.2wed.jp/'
+
+  login_type_names:
+    'opration': '審査画面'
+    'business': '管理画面'
+    'average':  '一般ユーザー'
+
+  user_status_names:
+    'active':   '有効'
+    'pennding': '停止中'
+
+  user_type_names:
+    'root':   'root'
+    'master': 'マスター'
+    'viewer': '閲覧者'
+    'editor': '式場さま'
+    'public': '一般'
+
+  delete: 
+    - '未削除'
+    - '削除済'
 
   corporation_admin_type_names:
-    1: '直営'
-    2: 'デスク運営'
-    3: '代理店'
+    - '-'
+    - '直営'
+    - 'デスク運営'
+    - '代理店'
 
   place_type_names:
     1: '総合結婚式場'
@@ -18,6 +39,12 @@ development:
     6: '神社仏閣'
     99: 'その他'
 
+development:
+  <<: *defaults
+
 test:
+  <<: *defaults
 
 production:
+  <<: *defaults
+
