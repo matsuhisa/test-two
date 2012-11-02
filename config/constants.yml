@@ -5,7 +5,7 @@ defaults: &defaults
   basePath: 'http://stage.2wed.jp/'
 
   login_type_names:
-    'opration': '審査画面'
+    'operation': '審査画面'
     'business': '管理画面'
     'average':  '一般ユーザー'
 
@@ -19,6 +19,29 @@ defaults: &defaults
     'viewer': '閲覧者'
     'editor': '式場さま'
     'public': '一般'
+
+  case_plan_type_names:
+    - '-'
+    - '挙式のみ'
+    - '挙式+会食'
+    - 'フォト+会食'
+
+  case_prepare_type_names:
+    - '-'
+    - '1週間'
+    - '2週間'
+    - '3週間'
+    - '4週間'
+    - '1.0ヶ月'
+    - '1.5ヶ月'
+    - '2.0ヶ月'
+    - '2.5ヶ月'
+    - '3.0ヶ月'
+    - '4.0ヶ月'
+    - '5.0ヶ月'
+    - '半年'
+    - '一年'
+    - '一年以上'
 
   delete: 
     - '未削除'

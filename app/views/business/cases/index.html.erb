@@ -2,20 +2,40 @@
 
 <%= render '/business/common/sub_menu' %>
 
+<p><%= link_to '追加する', new_business_case_path %></p>
+
 <table>
   <tr>
     <th>名称</th>
-    <th>開催日時</th>
+    <th>挙式日</th>
+    <th>プランタイプ</th>
+    <th>招待人数</th>
+    <th>準備期間</th>
+    <th>掲載順</th>
+    <th>コメント</th>
   </tr>
 <% @cases.each do |c| %>
   <tr>
     <td>
-<%= c.name %><br>
-
-<%= c.etc %><br>
-
+<%= link_to c.name, edit_business_case_path(c) %>（<%= c.id %>）
     </td>
     <td>
+<%= c.wedding_datetime %>
+    </td>
+    <td>
+<%= c.plan_type_name %>
+    </td>
+    <td>
+<%= c.inv_num %>
+    </td>
+    <td>
+<%= c.prepare_type_name %>
+    </td>
+    <td>
+<%= c.sort_number %>
+    </td>
+    <td>
+<%= c.etc %>
     </td>
   </tr>
 <% end %>

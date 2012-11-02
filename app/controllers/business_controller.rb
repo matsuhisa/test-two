@@ -9,9 +9,10 @@ class BusinessController < ActionController::Base
   def login_affter_initialize
     @constans = Constants
     if current_user
-      @place = current_user.place
       if current_user.login_type != 'business'
         redirect_to root_path
+      else
+        @place = current_user.place
       end
     end
   end

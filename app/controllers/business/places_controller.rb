@@ -27,7 +27,6 @@ class Business::PlacesController < BusinessController
   # PUT /places/1
   # PUT /places/1.json
   def update
-    p params
     @place = Place.find(params[:id])
 
     respond_to do |format|

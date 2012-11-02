@@ -1,0 +1,44 @@
+<%= form_for(@case, :url => business_case_path(@case)) do |f| %>
+  <% if @case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @case.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    先輩カップル名称<br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    挙式日<br />
+    <%=raw sprintf(f.date_select(:wedding_datetime, :use_month_numbers => true, :date_separator=> '%s'), '年', '月') %>日
+  </div>
+
+  <div class="field">
+    プランタイプ<br />
+  </div>
+
+  <div class="field">
+    招待人数<br />
+  </div>
+
+  <div class="field">
+    準備期間<br />
+  </div>
+
+  <div class="field">
+    コメント<br />
+    <%= f.text_area :etc %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
